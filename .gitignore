@@ -1,0 +1,6 @@
+.build/
+*.sw*
+.DS_Store
+Alien-raylib-*/
+Alien-raylib-*.tar.gz
+
