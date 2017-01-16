@@ -11,8 +11,6 @@ Alien::raylib - Alien distribution for raylib video game engine
 
 Use L<Graphics::Raylib::XS>, which wraps this in XS, instead. Otherwise, just use it like any other Alien distro.
 
-=back
-
 =head1 GIT REPOSITORY
 
 L<http://github.com/athreef/Alien-raylib>
