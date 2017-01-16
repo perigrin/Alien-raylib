@@ -26,8 +26,6 @@ Use L<Graphics::Raylib::XS>, which wraps this in XS, instead. Otherwise, just us
 1;
 __END__
 
-=back
-
 =head1 GIT REPOSITORY
 
 L<http://github.com/athreef/Alien-raylib>
