@@ -18,7 +18,7 @@ Alien::raylib - Alien distribution for raylib video game engine
 
 =head1 USAGE
 
-Use L<Graphics::Raylib::XS>, which wraps this in XS, instead. Otherwise, just use it like any other Alien distro.
+Use L<Graphics::Raylib::XS>, which wraps this in XS, instead. Otherwise, just use it like any other Alien distro. Currently wraps raylib 1.8.0.
 
 =cut
 

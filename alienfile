@@ -4,14 +4,27 @@ plugin 'PkgConfig' => 'raylib';
 
 share {
     plugin Download => (
-        url => 'https://github.com/a3f/raylib/archive/master.tar.gz'
+        url => 'https://github.com/raysan5/raylib/archive/develop.tar.gz'
     );
 
     plugin Extract => 'tar.gz';
+    plugin 'Build::CMake';
+
+    if ($^O eq 'darwin') {
+      meta->after_hook(gather_share => sub {
+        my($build) = @_;
+        $build->runtime_prop->{$_}.='-framework Cocoa -framework OpenAL' for qw(libs libs_static);
+      });
+    }
 
     build [
-        '%{make} -C src',
-        '%{make} -C src install PREFIX=%{.install.prefix}',
+        [ '%{cmake}', -G => '%{cmake_generator}', '-DWITH_PIC=ON',
+          '-DSHARED_RAYLIB=ON', '-DSTATIC_RAYLIB=ON',
+          '-DCMAKE_INSTALL_PREFIX:PATH=%{.install.prefix}',
+          '-DBUILD_EXAMPLES=OFF', '-DBUILD_GAMES=OFF', '.'],
+
+        '%{cmake} --build .',
+        '%{cmake} --build . --target install'
     ];
 
     plugin 'Gather::IsolateDynamic' => ();
