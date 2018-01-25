@@ -18,7 +18,19 @@ Alien::raylib - Alien distribution for raylib video game engine
 
 =head1 USAGE
 
-Use L<Graphics::Raylib::XS>, which wraps this in XS, instead. Otherwise, just use it like any other Alien distro. Currently wraps raylib 1.9.1-dev (and a few extra commits L<ca921e5a53fdd3412f5f81e3a739f54d68cb63a7|https://github.com/raysan5/raylib/commit/ca921e5a53fdd3412f5f81e3a739f54d68cb63a7>, specifically)
+Use L<Graphics::Raylib::XS>, which wraps this in XS, instead. Otherwise, just use it like any other Alien distro. Currently wraps raylib 1.9.1-dev (and a few extra commits L<c2ec88f93015f688905a0a35b64cc7c29daef223|https://github.com/raysan5/raylib/commit/c2ec88f93015f688905a0a35b64cc7c29daef223>, specifically)
+
+=head1 System requirements
+
+Should build out of the box on macOS and Windows.
+On an Ubuntu Linux a few additonal packages are required:
+
+    sudo apt-get install -y libasound2-dev \
+        libxcursor-dev libxinerama-dev mesa-common-dev \
+        libx11-dev libxrandr-dev libxi-dev \
+        libgl1-mesa-dev libglu1-mesa-dev libglew-dev
+
+If you also think these should be packaged as L<Alien> modules, shoot me a L<pull request|https://github.com/athreef/Alien-raylib/pulls>.
 
 =cut
 
