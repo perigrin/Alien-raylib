@@ -28,7 +28,7 @@ On an Ubuntu Linux a few additonal packages are required:
     sudo apt-get install -y libasound2-dev \
         libxcursor-dev libxinerama-dev mesa-common-dev \
         libx11-dev libxrandr-dev libxi-dev \
-        libgl1-mesa-dev libglu1-mesa-dev libglew-dev
+        libgl1-mesa-dev libglu1-mesa-dev
 
 If you also think these should be packaged as L<Alien> modules, shoot me a L<pull request|https://github.com/athreef/Alien-raylib/pulls>.
 
