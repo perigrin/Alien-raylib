@@ -13,7 +13,7 @@ version 0.008
 
 =head1 USAGE
 
-Use L<Graphics::Raylib::XS>, which wraps this in XS, instead. Otherwise, just use it like any other Alien distro. Currently wraps raylib 1.9.1-dev (and a few extra commits L<c2ec88f93015f688905a0a35b64cc7c29daef223|https://github.com/raysan5/raylib/commit/c2ec88f93015f688905a0a35b64cc7c29daef223>, specifically)
+Use L<Graphics::Raylib::XS>, which wraps this in XS, instead. Otherwise, just use it like any other Alien distro. Currently wraps raylib 1.9.1-dev (and a few extra commits L<2090ad8119fd622f80ff8a8707f416abec1db375|https://github.com/raysan5/raylib/commit/2090ad8119fd622f80ff8a8707f416abec1db375>, specifically)
 
 =head1 System requirements
 
