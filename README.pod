@@ -9,7 +9,7 @@ Alien::raylib - Alien distribution for raylib video game engine
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 USAGE
 
