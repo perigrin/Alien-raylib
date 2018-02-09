@@ -4,7 +4,9 @@ plugin 'PkgConfig' => 'raylib';
 
 share {
     plugin Download => (
-        url => 'https://github.com/a3f/raylib/archive/Alien-raylib-v0.010.tar.gz'
+        url => 'https://github.com/raysan5/raylib/archive/'
+             . 'f72b315cb66de68486a8cf41a2767902aceb9c67'
+             . '.tar.gz'
     );
 
     plugin Extract => 'tar.gz';
