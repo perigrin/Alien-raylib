@@ -5,7 +5,7 @@ plugin 'PkgConfig' => 'raylib';
 share {
     plugin Download => (
         url => 'https://github.com/raysan5/raylib/archive/'
-             . '2d6fb5c628068757387525e190c3afdbe33ae9c6'
+             . 'eed170f85217b38bd0ff8091325dcaf06fd61608'
              . '.tar.gz'
     );
 
