@@ -1,4 +1,5 @@
 use alienfile;
+use version;
 
 plugin 'PkgConfig' => 'raylib';
 
@@ -12,14 +13,20 @@ share {
     plugin Extract => 'tar.gz';
     plugin 'Build::CMake';
 
+    my @CMAKE_ARGS = (
+        '-DWITH_PIC=ON', '-DSHARED=ON', '-DSTATIC=ON',
+        '-DBUILD_EXAMPLES=OFF', '-DBUILD_GAMES=OFF',
+    );
+
+    $^O eq 'darwin' && do { chomp(my $r = `uname -r`); version->parse($r) < v18.0.0 }
+        and push @CMAKE_ARGS, '-DMACOS_FATLIB=ON';
+
     build [
         [ '%{cmake}', -G => '%{cmake_generator}',
-          '-DMACOS_FATLIB=ON',
-          '-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON', '-DWITH_PIC=ON',
-          '-DSHARED=ON', '-DSTATIC=ON',
+          '-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON',
           '-DCMAKE_INSTALL_PREFIX:PATH=%{.install.prefix}',
           '-DCMAKE_MAKE_PROGRAM:PATH=%{make}',
-          '-DBUILD_EXAMPLES=OFF', '-DBUILD_GAMES=OFF', '.'],
+          @CMAKE_ARGS, '.'],
 
         '%{cmake} --build .',
         '%{cmake} --build . --target install'
